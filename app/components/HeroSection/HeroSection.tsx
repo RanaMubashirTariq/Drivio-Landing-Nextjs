@@ -128,7 +128,7 @@ const CustomDropdown = ({
                 setSelected(option);
                 setOpen(false);
               }}
-              className="px-4 py-2 hover:bg-[#0095FE] cursor-pointer text-[#9A9A9A] font-medium font-['sora] leading-[100%]"
+              className="px-4 py-2 hover:bg-[#0095FE] hover:text-white cursor-pointer  text-[#9A9A9A] font-medium font-['sora] leading-[100%] max-[500px]:py-3"
             >
               {option}
             </li>
