@@ -79,11 +79,11 @@ export default function FAQSection () {
           >
             <AccordionTrigger
               className="flex justify-between items-center w-full max-[767px]:px-4 max-[767px]:py-4 md:px-6 md:py-6 lg:px-10 lg:py-8
-                font-['sora']  font-semibold text-[20px] max-[450px]:text-[18px] text-start transition-all duration-300 [&>svg]:hidden group"
+                font-['sora']  font-semibold text-[20px] max-[450px]:text-[18px] text-start transition-all duration-300 [&>svg]:hidden group hover:no-underline"
             >
               <span>{item.question}</span>
               <span>
-                <RightArrowIcon className="transform transition-transform duration-300 group-data-[state=open]:rotate-90" />
+                <RightArrowIcon className="transform text-[140c44] transition-transform duration-300 group-data-[state=open]:rotate-90" />
               </span>
             </AccordionTrigger>
             <AccordionContent
