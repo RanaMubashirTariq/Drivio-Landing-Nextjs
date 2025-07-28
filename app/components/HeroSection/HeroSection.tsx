@@ -52,15 +52,18 @@ export default function HeroSection () {
     },
   ];
 
-
 useEffect(() => {
   const handleScroll = () => {
     const sections = ["home", "about", "pricing", "testimonial"];
+    const scrollPosition = window.scrollY + 130; // Add padding for fixed header
+
     for (const id of sections) {
       const section = document.getElementById(id);
       if (section) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 150 && rect.bottom >= 150) {
+        const offsetTop = section.offsetTop;
+        const offsetHeight = section.offsetHeight;
+
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
           setActiveSection(id);
           break;
         }
@@ -69,13 +72,14 @@ useEffect(() => {
   };
 
   window.addEventListener("scroll", handleScroll);
+  handleScroll(); // Trigger once on load
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
 
 
     return (
-        <section className="relative w-full  bg-[#f3f3f3] overflow-hidden  ">
+        <section className="relative w-full flex flex-col items-center bg-[#f3f3f3] overflow-hidden  ">
 
                      {/* NavbarSection  */}
                  
@@ -152,15 +156,10 @@ useEffect(() => {
           {/* Mobile Navigation Menu - shows below 1000px */}
           <div className={`min-[1000px]:hidden w-full ${isMenuOpen ? 'block' : 'hidden'} absolute top-[90px] left-0 bg-white shadow-lg py-4 px-6 z-50`}>
             <div className="w-full">
-              <ul className="flex flex-col space-y-4 text-base font-normal text-[#001422]">
+              <ul className="flex flex-col items-center space-y-4 text-base font-normal text-[#001422]">
             <li>
               <Link href="#" className={`${pathname === "/" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"} hover:text-[#9A9A9A]`}>
                 Home
-              </Link>
-            </li>
-            <li>
-              <Link href="#about" className={`${pathname === "#about" ? "text-[#0095fe] font-medium" : "text-[#001422]"} hover:text-[#9A9A9A]`}>
-                About Us
               </Link>
             </li>
             <li>
@@ -177,7 +176,7 @@ useEffect(() => {
                     <Link
                       href="#pricing"
                       className={`${
-                        activeSection === "about" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
+                        activeSection === "pricing" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
                       } hover:text-[#0095fe]`}
                     >
                       Pricing
@@ -187,12 +186,17 @@ useEffect(() => {
                     <Link
                       href="#testimonial"
                       className={`${
-                        activeSection === "about" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
+                        activeSection === "testimonial" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
                       } hover:text-[#0095fe]`}
                     >
                       Testimonial
                     </Link>
             </li>
+                   <li>
+           <Button className=" bg-[#0095fe] text-white font-bold rounded-xl h-[52px] w-[200px] font-['sora'] ">
+            Sign In
+          </Button>
+                   </li>
               </ul>
             </div>
           </div>
@@ -219,7 +223,7 @@ useEffect(() => {
 
 
         {/* Right Part HeroSection */}
-        <div className="z-10 lg:absolute top-[216px] left-[120px] max-[1300px]:left-[60px] max-[1100px]:left-[40px] max-[767px]:left-[0px] max-[1000px]:px-[50px] max-[680px]:px-[25px]  w-full max-w-[566px] max-[1300px]:max-w-[480px] max-[1100px]:max-w-[380px] max-[1022px]:max-w-full max-[1022px]:items-center  flex flex-col gap-[89.5px]  max-[1300px]:gap-[50px] max-[767px]:gap-[30px] ">
+        <div  className=" z-10 lg:absolute top-[216px] left-[120px] max-[1300px]:left-[60px] max-[1100px]:left-[40px] max-[767px]:left-[0px] max-[1000px]:px-[50px] max-[680px]:px-[25px]  w-full max-w-[566px] max-[1300px]:max-w-[480px] max-[1100px]:max-w-[380px] max-[1022px]:max-w-full max-[1022px]:items-center  flex flex-col gap-[89.5px]  max-[1300px]:gap-[50px] max-[767px]:gap-[30px] ">
 
 
               <div className="flex flex-col gap-8 max-[1022px]:items-center max-[767px]:gap-4">
@@ -320,8 +324,8 @@ useEffect(() => {
                                     {/* Features Section */}
                                
 
-             <section id="about" className="scroll-mt-[120px]   py-10  px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[40px]  max-[767px]:px-[25px] overflow-hidden pt-[850px]  max-[1100px]:pt-[700px] max-[1000px]:pt-[40px]">
-        <div className="flex flex-col min-[1100px]:flex-row gap-10 items-center justify-center min-[1100px]:justify-between text-center lg:text-left">
+             <section id="about" className="mt-[750px] max-[1100px]:mt-[650px] max-[1000px]:mt-0    py-10  px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[40px]  max-[767px]:px-[25px] overflow-hidden  max-[1000px]:pt-[40px]">
+        <div className="flex flex-col min-[1100px]:flex-row gap-10 items-center justify-center min-[1100px]:justify-between text-center lg:text-left ">
      
           <div className="w-full min-[1100px]:w-[539px] flex flex-col gap-[40px] max-[1000px]:gap-[20px] max-[1100px]:items-center">
             <div className="flex flex-col gap-[16px] max-[1100px]:items-center">
@@ -340,13 +344,13 @@ useEffect(() => {
           </div>   
 
           
-          <div className="relative w-full min-[1100px]:w-[585px]  grid  grid-cols-1 min-[767px]:grid-cols-2 gap-[10px] min-[767px]:gap-6">
+          <div className="relative w-full min-[1100px]:w-[585px]  grid  max-[766px]:grid-cols-1 min-[767px]:grid-cols-2 gap-[10px] min-[767px]:gap-6">
             {featureCards.map((card) => (
               <Card
                 key={card.id}
-                className="bg-white rounded-[30px] overflow-hidden w-full h-auto min-w-[288px]"
+                className="bg-white rounded-[30px] overflow-hidden w-full h-auto min-w-[370px]:min-w-[288px] "
               >
-                <CardContent className="p-4 min-[767px]:p-6 ">
+                <div className="p-4 min-[767px]:p-6 ">
                   <div className="relative w-[80px] min-[320px]:w-[85px] min-[370px]:w-[90px] min-[767px]:w-[100px] h-[80px]  min-[370px]:h-[90px] min-[767px]:h-[100px] mb-4 min-[767px]:mb-10 mx-auto lg:mx-0">
                     <div className="absolute w-full h-full top-0 left-0 bg-[#0095fe] rounded-[50px] opacity-[20%]" />
                     <img
@@ -392,7 +396,7 @@ useEffect(() => {
                   <p className="font-['sora'] font-normal text-[#9a9a9a] text-[14px] min-[767px]:text-sm leading-[24px] min-[767px]:leading-6 text-center lg:text-left">
                     {card.description}
                   </p>
-                </CardContent>
+                </div>
               </Card>
             ))}
           </div>

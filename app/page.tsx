@@ -8,11 +8,19 @@ import CustomerTestimonialsSection from "./components/CustomerTestimonialsSectio
 export default function Home() {
   return (
     <div className="bg-[#F4F4F4]">
-      <section id="home">
+        <section id="home">
         <HeroSection />
-      </section>
+       </section>
+          
+
+
+      <section id="pricing">
         <ServiceFeaturesSection />
+      </section>
+
+      <section id="testimonial">
         <CustomerTestimonialsSection/>
+      </section>
 
       <FAQSection />
       <SiteFooterSection />
