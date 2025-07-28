@@ -1,11 +1,14 @@
 'use client'
-import { useEffect, useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '../../../app/ui/button';
 import { Input } from "../../../app/ui/input";
 import { Card, CardContent } from "../../../app/ui//card";
 import { Menu, X } from "lucide-react";
+
+  // Mui
+
 
 
 export default function HeroSection () {
@@ -75,6 +78,72 @@ useEffect(() => {
   handleScroll(); // Trigger once on load
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+
+
+
+//  Features Card
+ 
+ 
+  const [fromCity, setFromCity] = useState("Dallas");
+  const [toCity, setToCity] = useState("Chicago");
+  
+const CustomDropdown = ({
+  label,
+  options,
+  selected,
+  setSelected,
+}: {
+  label: string;
+  options: string[];
+  selected: string;
+  setSelected: (value: string) => void;
+}) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="relative w-full max-w-[173px] max-[1000px]:max-w-full z-20">
+      <label className="text-base font-bold font-['sora'] text-[#001422] mb-2 block">
+        {label}
+      </label>
+      <div
+        onClick={() => setOpen(!open)}
+        className=" z-10 bg-gray-100 text-[#9A9A9A] border-none rounded-[10px] px-4 py-2 cursor-pointer flex justify-between items-center"
+      >
+        <span>{selected}</span>
+        <svg
+          className="w-4 h-4 text-gray-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+      {open && (
+        <ul className="absolute top-full mt-1 w-full bg-white rounded-[10px] shadow z-40  max-[500px]:top-[-100px]">
+          {options.map((option) => (
+            <li
+              key={option}
+              onClick={() => {
+                setSelected(option);
+                setOpen(false);
+              }}
+              className="px-4 py-2 hover:bg-[#0095FE] cursor-pointer text-[#9A9A9A] font-medium font-['sora] leading-[100%]"
+            >
+              {option}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+
+
+
+
+
 
 
 
@@ -239,86 +308,39 @@ useEffect(() => {
 
               {/* booking Option */}
 
-              <div className="w-full rounded-[20px] flex overflow-hidden max-[500px]:flex-col z-50 ">
-                      <div className="flex flex-1 bg-white p-6 max-[1100px]:p-3 max-[500px]:gap[10px] gap-[32px] rounded-l-xl rounded-b-[0] max-[500px]:flex-col max-[500px]:system-x-[0] max-[500px]:items-center">
-                        <div className="relative w-full flex flex-col flex-1 w-full max-w-[173px] max-[1000px]:max-w-[100%]">
-                          <label htmlFor="from" className="text-base font-bold font-['sora'] text-[#001422] text-slate-900 mb-2">
-                            From
-                          </label>
-                          <select
-                            id="from"
-                            className="bg-gray-100 rounded-md border-none text-[#9A9A9A] px-4 pr-10 py-2 w-full cursor-pointer focus:outline-none appearance-none"
-                            defaultValue="Dallas"
-                          >
-                            <option className="text-[#9A9A9A]">Dallas</option>
-                            <option>New York</option>
-                            <option>Los Angeles</option>
-                            <option>Miami</option>
-                          </select>
-                                
-                                   <div className="pointer-events-none absolute top-[60%] right-3 flex items-center">
-                                        <span>
-                                           <svg
-                                          className="w-4 h-4 text-gray-500"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          viewBox="0 0 24 24"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                        </svg>
-                                        </span>
-                                      </div>
-                        </div>
-                        <div className="relative w-full flex flex-col flex-1 w-full max-w-[173px] max-[1000px]:max-w-[100%]">
-                          <label htmlFor="to" className="text-base font-bold font-['sora'] text-[#001422] text-slate-900 mb-2">
-                            To
-                          </label>
-                          <select
-                            id="to"
-                            className="bg-gray-100 rounded-md border-none text-[#9A9A9A] px-4 pr-10 py-2 w-full cursor-pointer focus:outline-none appearance-none "
-                            defaultValue="Chicago"
-                          >
-                            <option className="text-[#9A9A9A]">Chicago</option>
-                            <option>Houston</option>
-                            <option>Seattle</option>
-                            <option>Boston</option>
-                          </select>
+              <div className="w-full rounded-[20px] flex max-[500px]:flex-col z-50 relative">
+      <div className="flex flex-1 bg-white p-6 max-[1100px]:p-3 max-[500px]:gap-[10px] gap-[32px] rounded-[20px] rounded-b-[0] max-[500px]:flex-col max-[500px]:items-center">
+        <CustomDropdown
+          label="From"
+          options={["Dallas", "New York", "Los Angeles", "Miami"]}
+          selected={fromCity}
+          setSelected={setFromCity}
+        />
+        <CustomDropdown
+          label="To"
+          options={["Chicago", "Houston", "Seattle", "Boston"]}
+          selected={toCity}
+          setSelected={setToCity}
+        />
+      </div>
 
-                                                                        <div className="pointer-events-none absolute top-[60%] right-3 flex items-center">
-                                        <span>
-                                           <svg
-                                          className="w-4 h-4 text-gray-500"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          viewBox="0 0 24 24"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                                        </svg>
-                                        </span>
-                                      </div>
-                                    
-                        </div>
-                      </div>
-                            <button   className="bg-[#0095FE] w-[120px] max-[1100px]:w-[80px] max-[1000px]:w-[100px] max-[500px]:w-full max-[500px]:h-[50px]  px-6 py-[18px]  rounded-r-[20px]  max-[500px]:rounded-r-[0px]  max-[500px]:rounded-b-[20px]  flex items-center justify-center  hover:bg-blue-600  transition-colors">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-8 w-8 text-white"
-                                fill="none"
-                                viewBox="0 0 32 32"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                                aria-label="search icon"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"
-                                />
-                              </svg>
-                            </button>
-              </div>
+      <button className="bg-[#0095FE] w-[120px] max-[1100px]:w-[80px] max-[1000px]:w-[100px] max-[500px]:w-full max-[500px]:h-[50px] px-6 py-[18px] rounded-r-[20px] max-[500px]:rounded-r-[0px] max-[500px]:rounded-b-[20px] flex items-center justify-center hover:bg-blue-600 transition-colors">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-8 w-8 text-white"
+          fill="none"
+          viewBox="0 0 32 32"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"
+          />
+        </svg>
+      </button>
+    </div>
               </div>
 
                                     {/* Features Section */}

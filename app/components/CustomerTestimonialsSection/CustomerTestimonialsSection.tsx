@@ -74,7 +74,7 @@ export default function CustomerTestimonialsSection () {
                   ? "bg-[#0095fe] text-white scale-[1.02] shadow-lg"
                   : "bg-white text-[#9a9a9a] border border-[#ededed]"
                 }
-                ${isDimmed ? "opacity-[30%] blur-[10%]" : "opacity-100 blur-0"}
+                ${isDimmed ? "opacity-[50%]" : ""}
               `}
             >
               <div>
@@ -108,7 +108,7 @@ export default function CustomerTestimonialsSection () {
                       key={i}
                       src={isActive ? "/star-1-1.svg" : "/star-1.svg"}
                       alt="star"
-                      className={isActive ? "w-6 h-6" : "w-4 h-4"}
+                      className={isActive ? "w-6 h-6" : "w-5 h-5"}
                     />
                   ))}
                 </div>
