@@ -46,18 +46,18 @@ export default function SiteFooterSection () {
              <div className="flex item-center justify-between w-full max-w-[581px] max-[1100px]:max-w-[100%] max-[552px]:flex-wrap max-[552px]:gap-10">      
           {/* Office and Social Media */}
           <div className="flex flex-col gap-10 max-[1100px]:gap-5 max-[552px]:gap-[10px]">
-            <div className="flex flex-col gap-5">
-              <h3 className="[font-family:'sora'] font-bold text-white text-[18px]">
+            <div className="flex flex-col gap-[22px] ">
+              <h3 className="[font-family:'sora'] font-bold text-white leading-[100%] text-[18px]">
                 Office
               </h3>
-              <p className="[font-family:'sora'] font-normal text-white text-base">
+              <p className="[font-family:'sora'] leading-[100%] font-normal text-white text-base">
                 Jln.Galau terus no 23. <br />
                 Jakarta selatan
               </p>
             </div>
 
-                  <div>
-                    <h3 className="[font-family:'poppins'] font-bold text-white text-base min-[767px]:text-lg mb-3 min-[320px]:mb-4 min-[553px]:mb-6">
+                  <div className="flex flex-col gap-5">
+                    <h3 className="[font-family:'sora'] font-bold text-white leading-[100%] text-[18px] mt-[20px] max-[767px]:mt-[10px] max-[1100px]:mt-[35px]">
                       Follow us
                     </h3>
                     <div className="flex justify-center min-[553px]:justify-start gap-4 min-[320px]:gap-5 min-[553px]:gap-6">

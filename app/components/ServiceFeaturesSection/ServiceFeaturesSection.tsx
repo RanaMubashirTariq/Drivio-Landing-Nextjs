@@ -49,7 +49,7 @@ export default function ServiceFeaturesSection () {
         {/* Text content */}
         <div className="w-full min-[1030px]:w-[539px] flex flex-col gap-10 max-[1100px]:items-center max-[1000px]:gap-[20px]">
           <div className="flex flex-col gap-4 ">
-            <h2 className="font-['sora'] font-semibold text-[#001422] text-[48px] max-[1000px]:text-[36px] max-[1000px]:leading-[48px] max-[680px]:text-[28px] max-[680px]:leading-[38px]  leading-[72px] tracking-[0%]">
+            <h2 className="font-['sora'] font-semibold text-[#001422] text-[48px] leading-[72px] max-[1000px]:text-[36px] max-[1000px]:leading-[48px] max-[680px]:text-[28px] max-[680px]:leading-[38px]  leading-[72px] tracking-[0%]">
               Connected With All Circles And Wherever And Whenever
             </h2>
 

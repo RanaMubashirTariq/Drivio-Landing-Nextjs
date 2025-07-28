@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React , {useState} from "react";
 import {
   Avatar,
   AvatarFallback,
@@ -35,11 +36,19 @@ const testimonials = [
 ];
 
 export default function CustomerTestimonialsSection () {
+
+               const [activeCardId, setActiveCardId] = useState<number | null>(null);
+
+                 const handleCardClick = (id: number) => {
+                      setActiveCardId(prev => (prev === id ? null : id)); // toggle logic
+                          };
+           
+
   return (
     <section className="w-full py-10  bg-[#f3f3f3] px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[50px] max-[767px]:px-[25px]">
-      <div className="max-w-[1200px] mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col items-center mb-8 min-[770px]:mb-10 md:mb-16 text-center">
+           <div className="w-full max-w-[1200px] mx-auto flex flex-col item-center gap-10">
+                                <div className="flex flex-col items-center    text-center">
           <h2 className="font-semibold text-[40px] text-[#001422] leading-[72px]  [font-family:'sora'] max-[1100px]:text-[36px] max-[1100px]:leading-[48px]  max-[767px]:text-[28px] max-[767px]:leading-[38px]">
             What Our Customers
             <br />
@@ -52,99 +61,63 @@ export default function CustomerTestimonialsSection () {
 
         {/* Testimonials */}
         <div className="grid grid-cols-1 min-[767px]:grid-cols-2 lg:grid-cols-3 gap-4 min-[320px]:gap-5 min-[770px]:gap-6 justify-items-center">
-          {testimonials.map((testimonial) => (
+                 {testimonials.map((testimonial) => {
+          const isActive = testimonial.id === activeCardId;
+          const isDimmed = activeCardId !== null && !isActive;
+
+          return (
             <Card
               key={testimonial.id}
-              className={`w-full max-w-[462px] transition-all duration-300 hover:scale-[1.02] hover:shadow-lg group ${
-                testimonial.featured
-                  ? "bg-[#0095fe] text-white shadow-[10px_24px_54px_#0000000f] min-h-[300px] min-[320px]:min-h-[320px] min-[770px]:min-h-[340px]"
-                  : "bg-white text-[#9a9a9a] border border-solid border-[#ededed] hover:bg-[#0095fe] hover:text-white min-h-[260px] min-[320px]:min-h-[280px] min-[770px]:min-h-[300px]"
-              } rounded-[16px] min-[320px]:rounded-[18px] min-[770px]:rounded-[20px] ${
-                testimonial.featured ? "" : "md:mt-[31px]"}
-                ${testimonial.id === 3 ? "max-[900px]:col-span-2 max-[900px]:mx-auto max-[767px]:col-span-1" :  ""}
-                `}
+              onClick={() => handleCardClick(testimonial.id)}
+              className={`w-full max-w-[462px] cursor-pointer transition-all duration-300 rounded-[20px] p-6
+                ${isActive
+                  ? "bg-[#0095fe] text-white scale-[1.02] shadow-lg"
+                  : "bg-white text-[#9a9a9a] border border-[#ededed]"
+                }
+                ${isDimmed ? "opacity-[30%] blur-[10%]" : "opacity-100 blur-0"}
+              `}
             >
-              <CardContent className="p-4 min-[320px]:p-5 min-[770px]:p-6 md:p-8">
-                <div className="flex items-center">
-                <Avatar
-                      className={`w-10 h-10 min-[770px]:w-10 min-[770px]:h-10 ${
-                        testimonial.featured ? "w-12 h-12" : "group-hover:w-12 group-hover:h-12"
-                      } rounded-full border-2 border-white shadow-md transition-all duration-300`}
-                    >
-
-                    <AvatarImage
-                      src={testimonial.avatarSrc}
-                      alt={testimonial.name}
-                      className="object-cover"
-                    />
-                    <AvatarFallback className="bg-[#c4c4c4] text-white font-semibold">
-                      {testimonial.name.charAt(0)}
-                    </AvatarFallback>
+              <div>
+                <div className="flex items-center mb-4">
+                  <Avatar
+                    className={`rounded-full border-2 border-white shadow-md transition-all ${
+                      isActive ? "w-12 h-12" : "w-10 h-10"
+                    }`}
+                  >
+                    <AvatarImage src={testimonial.avatarSrc} alt={testimonial.name} />
+                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                   </Avatar>
-                  <div className="ml-3 min-[320px]:ml-4">
-                    <p
-                      className={`font-bold transition-colors duration-300 ${
-                        testimonial.featured
-                          ? "text-white text-sm min-[320px]:text-base"
-                          : "text-[#001422] group-hover:text-white text-xs min-[320px]:text-sm"
-                      } tracking-[0.50px] [font-family:'sora']`}
-                    >
+                  <div className="ml-3">
+                    <p className={`font-bold text-sm ${isActive ? "text-white" : "text-[#001422]"}`}>
                       {testimonial.name}
                     </p>
-                    <p
-                      className={`transition-colors duration-300 ${
-                        testimonial.featured
-                          ? "text-white/90 text-xs min-[320px]:text-sm"
-                          : "text-[#9a9a9a] group-hover:text-white/90 text-[10px] min-[320px]:text-xs"
-                      } font-normal tracking-[0.50px] [font-family:'sora']`}
-                    >
+                    <p className={`text-xs ${isActive ? "text-white/90" : "text-[#9a9a9a]"}`}>
                       {testimonial.role}
                     </p>
                   </div>
                 </div>
 
-                <p
-                  className={`transition-colors duration-300 ${
-                    testimonial.featured
-                      ? "text-white mt-[25px] "
-                      : "text-[#9a9a9a] group-hover:text-white mt-4 min-[320px]:mt-5 min-[770px]:mt-6"
-                  } font-normal text-base leading-[40px] [font-family:'sora']`}
-                >
+                <p className={`text-base leading-[40px] max-[27px] ${isActive ? "text-white" : "text-[#9a9a9a]"}`}>
                   {testimonial.text}
                 </p>
 
-                <div className="flex mt-10  max-[767px]:mt-5 gap-1">
+                {/* Stars */}
+                <div className="flex mt-6 gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <div
+                    <img
                       key={i}
-                      className={`${
-                        testimonial.featured 
-                          ? "w-5 h-5 min-[320px]:w-6 min-[320px]:h-6 min-[770px]:w-7 min-[770px]:h-7" 
-                          : "w-4 h-4 min-[320px]:w-5 min-[320px]:h-5 group-hover:w-6 group-hover:h-6"
-                      } flex items-center justify-center transition-all duration-300`}
-                    >
-                      {testimonial.featured ? (
-                        <img
-                          className="w-3 h-[12px] min-[320px]:w-4 min-[320px]:h-[15px]"
-                          alt="Star"
-                          src="/star-1-1.svg"
-                        />
-                      ) : (
-                        <img
-                          className={`w-2 h-2 min-[320px]:w-[10px] min-[320px]:h-[10px] group-hover:w-6 group-hover:h-6 transition-all duration-300`}
-                          alt="Star"
-                          src="/star-1.svg"
-                        />
-                      )}
-                    </div>
-
+                      src={isActive ? "/star-1-1.svg" : "/star-1.svg"}
+                      alt="star"
+                      className={isActive ? "w-6 h-6" : "w-4 h-4"}
+                    />
                   ))}
                 </div>
-              </CardContent>
+              </div>
             </Card>
-          ))}
+          );
+        })}
         </div>
-      </div>
+           </div>
     </section>
   );
 };

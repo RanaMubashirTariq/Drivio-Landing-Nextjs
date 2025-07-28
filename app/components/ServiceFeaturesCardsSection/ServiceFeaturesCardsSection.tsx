@@ -42,7 +42,7 @@ export default function ServiceFeaturesCardsSection  () {
   ];
 
   return (
-    <section className="relative bg-[#F5F5F5] py-10  px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[40px]  max-[767px]:px-[25px] overflow-hidden">
+    <section className="relative  py-10  px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[40px]  max-[767px]:px-[25px] overflow-hidden">
         <div className="flex flex-col min-[1100px]:flex-row gap-10 items-center justify-center min-[1100px]:justify-between text-center lg:text-left">
           {/* Left side content */}
           <div className="w-full min-[1100px]:w-[539px] flex flex-col gap-[40px] max-[1000px]:gap-[20px] max-[1100px]:items-center">

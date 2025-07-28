@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '../../../app/ui/button';
 import { Input } from "../../../app/ui/input";
+import { Card, CardContent } from "../../../app/ui//card";
 import { Menu, X } from "lucide-react";
 
 
@@ -13,6 +14,43 @@ export default function HeroSection () {
             const [activeSection, setActiveSection] = useState("home");
 
               const pathname = usePathname(); 
+
+
+                const featureCards = [
+    {
+      id: 1,
+      title: "Fast And Simple",
+      description:
+        "You can manage all your tasks in our first and very helpful feature for your task",
+      iconSrc: "/group-1.png",
+      ellipseSrc: "/ellipse-12-1.svg",
+    },
+    {
+      id: 2,
+      title: "Booking",
+      description:
+        "Can help you to make detailed planning and also very real time for yout time work",
+      iconSrc: "/vector-1.svg",
+      ellipseSrc: "/ellipse-12.svg",
+      isComplex: true,
+    },
+    {
+      id: 3,
+      title: "Comfortable",
+      description:
+        "We will find out what you are working on or there is a problem with your task manager",
+      iconSrc: "/48.svg",
+      ellipseSrc: "/ellipse-12.svg",
+    },
+    {
+      id: 4,
+      title: "3m Very Happy",
+      description:
+        "Create a team online and you can discuss with our professional team",
+      iconSrc: "/group-1708.png",
+      ellipseSrc: "/ellipse-12-1.svg",
+    },
+  ];
 
 
 useEffect(() => {
@@ -37,7 +75,7 @@ useEffect(() => {
 
 
     return (
-        <section className="relative w-full min-h-[795px] bg-[#f3f3f3] overflow-hidden">
+        <section className="relative w-full  bg-[#f3f3f3] overflow-hidden  ">
 
                      {/* NavbarSection  */}
                  
@@ -70,7 +108,7 @@ useEffect(() => {
              <Link
                       href="#"
                       className={`${
-                        activeSection === "home" ? "text-[#0095fe] font-medium" : "text-[#001422]"
+                        activeSection === "home" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
                       } hover:text-[#0095fe]`}
                     >
                       Home
@@ -80,7 +118,7 @@ useEffect(() => {
              <Link
                       href="#about"
                       className={`${
-                        activeSection === "about" ? "text-[#0095fe] font-medium" : "text-[#001422]"
+                        activeSection === "about" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
                       } hover:text-[#0095fe]`}
                     >
                       About Us
@@ -90,7 +128,7 @@ useEffect(() => {
                     <Link
                       href="#pricing"
                       className={`${
-                        activeSection === "pricing" ? "text-[#0095fe] font-medium" : "text-[#001422]"
+                        activeSection === "pricing" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
                       } hover:text-[#0095fe]`}
                     >
                       Pricing
@@ -100,7 +138,7 @@ useEffect(() => {
                     <Link
                       href="#testimonial"
                       className={`${
-                        activeSection === "testimonial" ? "text-[#0095fe] font-medium" : "text-[#001422]"
+                        activeSection === "testimonial" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
                       } hover:text-[#0095fe]`}
                     >
                      Testimonial
@@ -116,12 +154,12 @@ useEffect(() => {
             <div className="w-full">
               <ul className="flex flex-col space-y-4 text-base font-normal text-[#001422]">
             <li>
-              <Link href="#" className={`${pathname === "/" ? "text-[#0095fe] font-medium" : "text-[#001422]"} hover:text-[#0095fe]`}>
+              <Link href="#" className={`${pathname === "/" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"} hover:text-[#9A9A9A]`}>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="#about" className={`${pathname === "#about" ? "text-[#0095fe] font-medium" : "text-[#001422]"} hover:text-[#0095fe]`}>
+              <Link href="#about" className={`${pathname === "#about" ? "text-[#0095fe] font-medium" : "text-[#001422]"} hover:text-[#9A9A9A]`}>
                 About Us
               </Link>
             </li>
@@ -129,7 +167,7 @@ useEffect(() => {
              <Link
                       href="#about"
                       className={`${
-                        activeSection === "about" ? "text-[#0095fe] font-medium" : "text-[#001422]"
+                        activeSection === "about" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
                       } hover:text-[#0095fe]`}
                     >
                       About Us
@@ -139,7 +177,7 @@ useEffect(() => {
                     <Link
                       href="#pricing"
                       className={`${
-                        activeSection === "about" ? "text-[#0095fe] font-medium" : "text-[#001422]"
+                        activeSection === "about" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
                       } hover:text-[#0095fe]`}
                     >
                       Pricing
@@ -149,7 +187,7 @@ useEffect(() => {
                     <Link
                       href="#testimonial"
                       className={`${
-                        activeSection === "about" ? "text-[#0095fe] font-medium" : "text-[#001422]"
+                        activeSection === "about" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"
                       } hover:text-[#0095fe]`}
                     >
                       Testimonial
@@ -181,7 +219,7 @@ useEffect(() => {
 
 
         {/* Right Part HeroSection */}
-        <div className=" lg:absolute top-[216px] left-[120px] max-[1300px]:left-[60px] max-[1100px]:left-[40px] max-[767px]:left-[0px] max-[1000px]:px-[50px] max-[680px]:px-[25px]  w-full max-w-[566px] max-[1300px]:max-w-[480px] max-[1100px]:max-w-[380px] max-[1022px]:max-w-full max-[1022px]:items-center  flex flex-col gap-[89.5px]  max-[1300px]:gap-[50px] max-[767px]:gap-[30px] ">
+        <div className="z-10 lg:absolute top-[216px] left-[120px] max-[1300px]:left-[60px] max-[1100px]:left-[40px] max-[767px]:left-[0px] max-[1000px]:px-[50px] max-[680px]:px-[25px]  w-full max-w-[566px] max-[1300px]:max-w-[480px] max-[1100px]:max-w-[380px] max-[1022px]:max-w-full max-[1022px]:items-center  flex flex-col gap-[89.5px]  max-[1300px]:gap-[50px] max-[767px]:gap-[30px] ">
 
 
               <div className="flex flex-col gap-8 max-[1022px]:items-center max-[767px]:gap-4">
@@ -197,18 +235,18 @@ useEffect(() => {
 
               {/* booking Option */}
 
-              <div className="w-full rounded-[20px] flex overflow-hidden max-[500px]:flex-col  ">
+              <div className="w-full rounded-[20px] flex overflow-hidden max-[500px]:flex-col z-50 ">
                       <div className="flex flex-1 bg-white p-6 max-[1100px]:p-3 max-[500px]:gap[10px] gap-[32px] rounded-l-xl rounded-b-[0] max-[500px]:flex-col max-[500px]:system-x-[0] max-[500px]:items-center">
                         <div className="relative w-full flex flex-col flex-1 w-full max-w-[173px] max-[1000px]:max-w-[100%]">
-                          <label htmlFor="from" className="text-base font-bold font-['sora'] text-slate-900 mb-2">
+                          <label htmlFor="from" className="text-base font-bold font-['sora'] text-[#001422] text-slate-900 mb-2">
                             From
                           </label>
                           <select
                             id="from"
-                            className="bg-gray-100 rounded-md border-none text-gray-400 px-4 pr-10 py-2 w-full cursor-pointer focus:outline-none appearance-none"
+                            className="bg-gray-100 rounded-md border-none text-[#9A9A9A] px-4 pr-10 py-2 w-full cursor-pointer focus:outline-none appearance-none"
                             defaultValue="Dallas"
                           >
-                            <option className="text-black">Dallas</option>
+                            <option className="text-[#9A9A9A]">Dallas</option>
                             <option>New York</option>
                             <option>Los Angeles</option>
                             <option>Miami</option>
@@ -229,15 +267,15 @@ useEffect(() => {
                                       </div>
                         </div>
                         <div className="relative w-full flex flex-col flex-1 w-full max-w-[173px] max-[1000px]:max-w-[100%]">
-                          <label htmlFor="to" className="text-base font-bold font-['sora'] text-slate-900 mb-2">
+                          <label htmlFor="to" className="text-base font-bold font-['sora'] text-[#001422] text-slate-900 mb-2">
                             To
                           </label>
                           <select
                             id="to"
-                            className="bg-gray-100 rounded-md border-none text-gray-400 px-4 pr-10 py-2 w-full cursor-pointer focus:outline-none appearance-none "
+                            className="bg-gray-100 rounded-md border-none text-[#9A9A9A] px-4 pr-10 py-2 w-full cursor-pointer focus:outline-none appearance-none "
                             defaultValue="Chicago"
                           >
-                            <option className="text-black">Chicago</option>
+                            <option className="text-[#9A9A9A]">Chicago</option>
                             <option>Houston</option>
                             <option>Seattle</option>
                             <option>Boston</option>
@@ -259,7 +297,7 @@ useEffect(() => {
                                     
                         </div>
                       </div>
-                            <button   className="bg-blue-500 w-[120px] max-[1100px]:w-[80px] max-[1000px]:w-[100px] max-[500px]:w-full max-[500px]:h-[50px]  px-6 py-[18px]  rounded-r-[20px]  max-[500px]:rounded-r-[0px]  max-[500px]:rounded-b-[20px]  flex items-center justify-center  hover:bg-blue-600  transition-colors">
+                            <button   className="bg-[#0095FE] w-[120px] max-[1100px]:w-[80px] max-[1000px]:w-[100px] max-[500px]:w-full max-[500px]:h-[50px]  px-6 py-[18px]  rounded-r-[20px]  max-[500px]:rounded-r-[0px]  max-[500px]:rounded-b-[20px]  flex items-center justify-center  hover:bg-blue-600  transition-colors">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-8 w-8 text-white"
@@ -278,6 +316,88 @@ useEffect(() => {
                             </button>
               </div>
               </div>
+
+                                    {/* Features Section */}
+                               
+
+             <section id="about" className="scroll-mt-[120px]   py-10  px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[40px]  max-[767px]:px-[25px] overflow-hidden pt-[850px]  max-[1100px]:pt-[700px] max-[1000px]:pt-[40px]">
+        <div className="flex flex-col min-[1100px]:flex-row gap-10 items-center justify-center min-[1100px]:justify-between text-center lg:text-left">
+     
+          <div className="w-full min-[1100px]:w-[539px] flex flex-col gap-[40px] max-[1000px]:gap-[20px] max-[1100px]:items-center">
+            <div className="flex flex-col gap-[16px] max-[1100px]:items-center">
+              <h2 className="font-['sora'] font-semibold text-[#001422] text-[48px] leading-[72px] max-[1000px]:text-[36px] max-[1000px]:leading-[48px] max-[680px]:text-[28px] max-[680px]:leading-[36px] leading-[72px] tracking-[0%] max-[1100px]:text-center">
+                We Will Make You Very Special With Our Service
+              </h2>
+              <p className="font-['sora'] font-normal text-[#9a9a9a] text-[16px]  leading-[40px] max-[1100px]:leading-[27px] tracking-[0%] max-[1100px]:text-center">
+                There are many benefits that you will get at Drivio, and for
+                sure you will be comfortable and safe with us with great
+                facilities and benefits
+              </p>
+            </div>
+              <Button className="bg-[#0095fe] w-[158px] h-[52px] text-base text-white font-bold rounded-xl">
+                Book now
+              </Button>
+          </div>   
+
+          
+          <div className="relative w-full min-[1100px]:w-[585px]  grid  grid-cols-1 min-[767px]:grid-cols-2 gap-[10px] min-[767px]:gap-6">
+            {featureCards.map((card) => (
+              <Card
+                key={card.id}
+                className="bg-white rounded-[30px] overflow-hidden w-full h-auto min-w-[288px]"
+              >
+                <CardContent className="p-4 min-[767px]:p-6 ">
+                  <div className="relative w-[80px] min-[320px]:w-[85px] min-[370px]:w-[90px] min-[767px]:w-[100px] h-[80px]  min-[370px]:h-[90px] min-[767px]:h-[100px] mb-4 min-[767px]:mb-10 mx-auto lg:mx-0">
+                    <div className="absolute w-full h-full top-0 left-0 bg-[#0095fe] rounded-[50px] opacity-[20%]" />
+                    <img
+                      className="absolute w-full h-[50%]  top-[50%] left-0"
+                      alt="Ellipse"
+                      src={card.ellipseSrc}
+                    />
+                      
+                    {card.isComplex ? (
+                      <div className="absolute w-10 min-[320px]:w-11 min-[370px]:w-12 min-[767px]:w-12 h-10 min-[320px]:h-11 min-[370px]:h-12 min-[767px]:h-12 top-[26px] left-[26px]">
+                        <div className="relative w-[32px] min-[320px]:w-[35px] min-[370px]:w-[38px] min-[767px]:w-[42px] h-8 min-[320px]:h-8.5 min-[370px]:h-9 min-[767px]:h-9 top-1.5 left-1">
+                          <img
+                            className="absolute w-full h-8 top-[3px] left-0"
+                            alt="Vector"
+                            src="/vector-1.svg"
+                          />
+                          <img
+                            className="absolute w-full h-0.5 top-[11px] left-0"
+                            alt="Vector"
+                            src="/vector-3.svg"
+                          />
+                          <img
+                            className="absolute w-[16px] min-[320px]:w-[18px] min-[370px]:w-[19px] min-[767px]:w-[21px] h-[7px] min-[320px]:h-[7.5px] min-[370px]:h-[8px] min-[767px]:h-[9px] top-0 left-2.5"
+                            alt="Group"
+                            src="/group-2.png"
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="absolute w-[42px] min-[320px]:w-[45px] min-[370px]:w-[48px] min-[767px]:w-[52px] h-[42px] min-[320px]:h-[45px] min-[370px]:h-[48px] min-[767px]:h-[52px] top-6 left-6">
+                        <img
+                          className="w-full h-full object-contain"
+                          alt={card.title}
+                          src={card.iconSrc}
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                  <h3 className="font-['sora'] font-semibold text-[#001422] text-[24px] max-[500px]:text-[20px] leading-[100%] lg:text-2xl mb-2 min-[767px]:mb-3 text-center lg:text-left">
+                    {card.title}
+                  </h3>
+                  <p className="font-['sora'] font-normal text-[#9a9a9a] text-[14px] min-[767px]:text-sm leading-[24px] min-[767px]:leading-6 text-center lg:text-left">
+                    {card.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+    </section>
 
               </section>
     )
