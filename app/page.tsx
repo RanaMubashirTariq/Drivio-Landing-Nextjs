@@ -1,9 +1,9 @@
 import HeroSection from "./components/HeroSection/HeroSection";
 import ServiceFeaturesCardsSection from "./components/ServiceFeaturesCardsSection/ServiceFeaturesCardsSection";
 import ServiceFeaturesSection from "./components/ServiceFeaturesSection/ServiceFeaturesSection";
-import { CustomerTestimonialsSection } from "./components/CustomerTestimonialsSection";
 import FAQSection from "./components/FAQSection/FAQSection";
 import SiteFooterSection from "./components/SiteFooterSection/SiteFooterSection";
+import CustomerTestimonialsSection from "./components/CustomerTestimonialsSection/CustomerTestimonialsSection";
 
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
       </section>
 
       <section id="testimonial">
-        <CustomerTestimonialsSection />
+        <CustomerTestimonialsSection/>
       </section>
 
       <FAQSection />
