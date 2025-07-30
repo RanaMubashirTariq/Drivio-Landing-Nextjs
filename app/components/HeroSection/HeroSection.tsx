@@ -25,7 +25,7 @@ export default function HeroSection () {
       title: "Fast And Simple",
       description:
         "You can manage all your tasks in our first and very helpful feature for your task",
-      iconSrc: "/group-1.png",
+      iconSrc: "/84.png",
       ellipseSrc: "/ellipse-12-1.svg",
     },
     {
@@ -33,7 +33,7 @@ export default function HeroSection () {
       title: "Booking",
       description:
         "Can help you to make detailed planning and also very real time for yout time work",
-      iconSrc: "/vector-1.svg",
+      iconSrc: "/31.png",
       ellipseSrc: "/ellipse-12.svg",
       isComplex: true,
     },
@@ -42,7 +42,7 @@ export default function HeroSection () {
       title: "Comfortable",
       description:
         "We will find out what you are working on or there is a problem with your task manager",
-      iconSrc: "/48.svg",
+      iconSrc: "/48.png",
       ellipseSrc: "/ellipse-12.svg",
     },
     {
@@ -50,7 +50,7 @@ export default function HeroSection () {
       title: "3m Very Happy",
       description:
         "Create a team online and you can discuss with our professional team",
-      iconSrc: "/group-1708.png",
+      iconSrc: "/61.png",
       ellipseSrc: "/ellipse-12-1.svg",
     },
   ];
@@ -292,7 +292,7 @@ const CustomDropdown = ({
 
 
         {/* Right Part HeroSection */}
-        <div  className=" z-10 lg:absolute top-[216px] left-[120px] max-[1300px]:left-[60px] max-[1100px]:left-[40px] max-[767px]:left-[0px] max-[1000px]:px-[50px] max-[680px]:px-[25px]  w-full max-w-[566px] max-[1300px]:max-w-[480px] max-[1100px]:max-w-[380px] max-[1022px]:max-w-full max-[1022px]:items-center  flex flex-col gap-[89.5px]  max-[1300px]:gap-[50px] max-[767px]:gap-[30px] ">
+        <div id="home" className=" z-10 lg:absolute top-[216px] left-[120px] max-[1300px]:left-[60px] max-[1100px]:left-[40px] max-[767px]:left-[0px] max-[1000px]:px-[50px] max-[680px]:px-[25px]  w-full max-w-[566px] max-[1300px]:max-w-[480px] max-[1100px]:max-w-[380px] max-[1022px]:max-w-full max-[1022px]:items-center  flex flex-col gap-[89.5px]  max-[1300px]:gap-[50px] max-[767px]:gap-[30px] ">
 
 
               <div className="flex flex-col gap-8 max-[1022px]:items-center max-[767px]:gap-4">
@@ -309,7 +309,7 @@ const CustomDropdown = ({
               {/* booking Option */}
 
               <div className="w-full rounded-[20px] flex max-[500px]:flex-col z-50 relative">
-      <div className="flex flex-1 bg-white p-6 max-[1100px]:p-3 max-[500px]:gap-[10px] gap-[32px] rounded-[20px] rounded-b-[0] max-[500px]:flex-col max-[500px]:items-center">
+      <div className="flex flex-1 bg-white p-6 max-[1100px]:p-3 max-[500px]:gap-[10px] gap-[32px] rounded-[20px] rounded-tr-[0] rounded-br-[0] max-[500px]:rounded-tr-[20px] max-[500px]:rounded-bl-[0] max-[500px]:flex-col max-[500px]:items-center">
         <CustomDropdown
           label="From"
           options={["Dallas", "New York", "Los Angeles", "Miami"]}
@@ -324,7 +324,7 @@ const CustomDropdown = ({
         />
       </div>
 
-      <button className="bg-[#0095FE] w-[120px] max-[1100px]:w-[80px] max-[1000px]:w-[100px] max-[500px]:w-full max-[500px]:h-[50px] px-6 py-[18px] rounded-r-[20px] max-[500px]:rounded-r-[0px] max-[500px]:rounded-b-[20px] flex items-center justify-center hover:bg-blue-600 transition-colors">
+      <button className="bg-[#0095FE] w-[120px] max-[1100px]:w-[80px] max-[1000px]:w-[100px] max-[500px]:w-full max-[500px]:h-[50px] px-6 py-[18px] rounded-r-[20px] max-[500px]:rounded-r-[0px] max-[500px]:rounded-b-[20px] flex items-center justify-center hover:opacity-[80%] transition-colors">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-8 w-8 text-white"
@@ -374,7 +374,7 @@ const CustomDropdown = ({
               >
                 <div className="p-4 min-[767px]:p-6 ">
                   <div className="relative w-[80px] min-[320px]:w-[85px] min-[370px]:w-[90px] min-[767px]:w-[100px] h-[80px]  min-[370px]:h-[90px] min-[767px]:h-[100px] mb-4 min-[767px]:mb-10 mx-auto lg:mx-0">
-                    <div className="absolute w-full h-full top-0 left-0 bg-[#0095fe] rounded-[50px] opacity-[20%]" />
+                    <div className="absolute w-full h-full top-0 left-0 bg-[#0095fe] rounded-[50px] opacity-[10%]" />
                     <img
                       className="absolute w-full h-[50%]  top-[50%] left-0"
                       alt="Ellipse"

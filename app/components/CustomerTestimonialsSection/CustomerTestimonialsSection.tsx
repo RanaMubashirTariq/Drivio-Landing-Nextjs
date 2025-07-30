@@ -36,14 +36,7 @@ const testimonials = [
 ];
 
 export default function CustomerTestimonialsSection () {
-
-               const [activeCardId, setActiveCardId] = useState<number | null>(null);
-
-                 const handleCardClick = (id: number) => {
-                      setActiveCardId(prev => (prev === id ? null : id)); // toggle logic
-                          };
            
-
   return (
     <section className="w-full py-10  bg-[#f3f3f3] px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[50px] max-[767px]:px-[25px]">
         {/* Section Header */}
@@ -60,44 +53,29 @@ export default function CustomerTestimonialsSection () {
         </div>
 
         {/* Testimonials */}
-        <div className="grid grid-cols-1 min-[767px]:grid-cols-2 lg:grid-cols-3 gap-4 min-[320px]:gap-5 min-[770px]:gap-6 justify-items-center">
-                 {testimonials.map((testimonial) => {
-          const isActive = testimonial.id === activeCardId;
-          const isDimmed = activeCardId !== null && !isActive;
-
-          return (
+        <div className="grid grid-cols-1 min-[767px]:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+          {testimonials.map((testimonial) => (
             <Card
               key={testimonial.id}
-              onClick={() => handleCardClick(testimonial.id)}
-              className={`w-full max-w-[462px] cursor-pointer transition-all duration-300 rounded-[20px] p-6
-                ${isActive
-                  ? "bg-[#0095fe] text-white scale-[1.02] shadow-lg"
-                  : "bg-white text-[#9a9a9a] border border-[#ededed]"
-                }
-                ${isDimmed ? "opacity-[50%]" : ""}
-              `}
+              className="w-full max-w-[462px] cursor-pointer transition-all duration-300 rounded-[20px] p-6 bg-white text-[#9a9a9a] border border-[#ededed] hover:bg-[#0095fe] hover:text-white hover:scale-[1.02] hover:shadow-lg"
             >
               <div>
                 <div className="flex items-center mb-4">
-                  <Avatar
-                    className={`rounded-full border-2 border-white shadow-md transition-all ${
-                      isActive ? "w-12 h-12" : "w-10 h-10"
-                    }`}
-                  >
+                  <Avatar className="rounded-full border-2 border-white shadow-md w-10 h-10 hover:w-12 hover:h-12 transition-all duration-300">
                     <AvatarImage src={testimonial.avatarSrc} alt={testimonial.name} />
                     <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div className="ml-3">
-                    <p className={`font-bold text-sm ${isActive ? "text-white" : "text-[#001422]"}`}>
+                    <p className="font-bold text-sm text-[#001422] group-hover:text-white">
                       {testimonial.name}
                     </p>
-                    <p className={`text-xs ${isActive ? "text-white/90" : "text-[#9a9a9a]"}`}>
+                    <p className="text-xs group-hover:text-white">
                       {testimonial.role}
                     </p>
                   </div>
                 </div>
 
-                <p className={`text-base leading-[40px] max-[27px] ${isActive ? "text-white" : "text-[#9a9a9a]"}`}>
+                <p className="text-base leading-[40px] font-['sora'] max-[1100px]:leading-[27px]">
                   {testimonial.text}
                 </p>
 
@@ -106,16 +84,23 @@ export default function CustomerTestimonialsSection () {
                   {[...Array(5)].map((_, i) => (
                     <img
                       key={i}
-                      src={isActive ? "/star-1-1.svg" : "/star-1.svg"}
+                      src="/star-1.svg"
                       alt="star"
-                      className={isActive ? "w-6 h-6" : "w-5 h-5"}
+                      className="w-5 h-5 group-hover:hidden"
+                    />
+                  ))}
+                  {[...Array(5)].map((_, i) => (
+                    <img
+                      key={i}
+                      src="/star-1-1.svg"
+                      alt="star active"
+                      className="w-6 h-6 hidden group-hover:inline"
                     />
                   ))}
                 </div>
               </div>
             </Card>
-          );
-        })}
+          ))}
         </div>
            </div>
     </section>
