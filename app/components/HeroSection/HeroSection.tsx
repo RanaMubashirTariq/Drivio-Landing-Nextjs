@@ -223,9 +223,9 @@ const CustomDropdown = ({
           </div>
 
           {/* Mobile Navigation Menu - shows below 1000px */}
-          <div className={`min-[1000px]:hidden w-full ${isMenuOpen ? 'block' : 'hidden'} absolute top-[90px] left-0 bg-white shadow-lg py-4 px-6 z-50`}>
+          <div className={`min-[1000px]:hidden w-[250px] ${isMenuOpen ? 'block' : 'hidden'} absolute top-[70px] right-0 h-[80vh] rounded-[20px] bg-white shadow-lg py-4 px-6 z-50`}>
             <div className="w-full">
-              <ul className="flex flex-col items-center space-y-4 text-base font-normal text-[#001422]">
+              <ul className="flex flex-col items-start space-y-4 text-base font-normal text-[#001422]">
             <li>
               <Link href="#" className={`${pathname === "/" ? "text-[#0095fe] font-medium" : "text-[#9A9A9A]"} hover:text-[#9A9A9A]`}>
                 Home
@@ -262,7 +262,7 @@ const CustomDropdown = ({
                     </Link>
             </li>
                    <li>
-           <Button className=" bg-[#0095fe] text-white font-bold rounded-xl h-[52px] w-[200px] font-['sora'] ">
+           <Button className=" bg-[#0095fe] text-white font-bold rounded-xl h-[40px] w-[150px] font-['sora'] mt-[30px]">
             Sign In
           </Button>
                    </li>
