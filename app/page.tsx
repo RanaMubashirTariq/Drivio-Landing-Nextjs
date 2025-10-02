@@ -20,7 +20,9 @@ export default function Home() {
         <CustomerTestimonialsSection/>
       </section>
 
+      <section id="faq">
       <FAQSection />
+      </section>
       <SiteFooterSection />
     </div>
   );

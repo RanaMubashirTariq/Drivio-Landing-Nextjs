@@ -16,8 +16,8 @@ const profileImages = [
 
 export default function ServiceFeaturesSection () {
   return (
-    <section className="relative w-full py-10 min-[1030px]:py-20 px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[50px] max-[767px]:px-[25px] max-[767px]: bg-[#f3f3f3]">
-      <div className=" flex flex-col min-[1030px]:flex-row items-center justify-center min-[1030px]:justify-between gap-8 max-w-[1200px] mx-auto text-center min-[1030px]:text-left ">
+    <section className="relative w-full py-10 max-[767px]:pt-0 min-[1030px]:py-20 px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[50px] max-[767px]:px-[25px]  bg-[#f3f3f3]">
+      <div className=" flex flex-col min-[1030px]:flex-row items-center min-[1500px]:justify-between justify-center min-[1030px]:justify-between gap-8 w-full max-[1500px]:max-w-[1200px] max-[1500px]:mx-auto text-center min-[1030px]:text-left ">
         {/* Visualization */}
         <div className="relative w-full md:w-[561px] aspect-square flex items-center justify-center">
           <div className="relative w-full aspect-square max-w-[555px] mx-auto rounded-full scale-[0.7] md:scale-100 transition-transform duration-300">
@@ -47,19 +47,19 @@ export default function ServiceFeaturesSection () {
         </div>
 
         {/* Text content */}
-        <div className="w-full min-[1030px]:w-[539px] flex flex-col gap-10 max-[1100px]:items-center max-[1000px]:gap-[20px]">
+        <div className="w-full min-[1500px]:w-[700px] min-[1030px]:w-[539px] flex flex-col gap-10 max-[1100px]:items-center max-[1000px]:gap-[20px]">
           <div className="flex flex-col gap-4 ">
-            <h2 className="font-['sora'] font-semibold text-[#001422] text-[48px] leading-[72px] max-[1000px]:text-[36px] max-[1000px]:leading-[48px] max-[680px]:text-[28px] max-[680px]:leading-[38px]  leading-[72px] tracking-[0%]">
+            <h2 className="font-['sora'] font-semibold text-[#001422] text-[56px] max-[1500px]:text-[48px] leading-[72px] max-[1000px]:text-[36px] max-[1000px]:leading-[48px] max-[767px]:text-[26px] max-[767px]:leading-[36px]  leading-[72px] tracking-[0%]">
               Connected With All Circles And Wherever And Whenever
             </h2>
 
-            <p className="font-['sora'] font-normal text-[#9a9a9a] text-base leading-[40px] max-[1100px]:leading-[27px] ">
+            <p className="font-['sora'] font-normal text-[#9a9a9a] text-lg max-[1500px]:text-base max-[767px]:text-sm max-[767px]:leading-[24px] leading-[40px] max-[1100px]:leading-[27px] ">
               Drivio reaches all people so that they can use the facilities that
               we provide, very special comfort and security
             </p>
           </div>
 
-          <Button className="w-[159px] h-[52px] bg-[#0095fe] rounded-xl font-['sora'] font-bold text-white text-base ">
+          <Button className="w-[159px] h-[52px] max-[767px]:w-[130px] max-[767px]:h-10 bg-[#0095fe] hover:bg-[#0095fe]/90 rounded-xl font-['sora'] font-bold text-white text-lg max-[1500px]:text-base max-[767px]:text-[14px] leading-[100%]">
             Explore now
           </Button>
         </div>

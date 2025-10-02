@@ -42,12 +42,12 @@ export default function CustomerTestimonialsSection () {
         {/* Section Header */}
            <div className="w-full max-w-[1200px] mx-auto flex flex-col item-center gap-10">
                                 <div className="flex flex-col items-center    text-center">
-          <h2 className="font-semibold text-[40px] text-[#001422] leading-[72px]  [font-family:'sora'] max-[1100px]:text-[36px] max-[1100px]:leading-[48px]  max-[767px]:text-[28px] max-[767px]:leading-[38px]">
+          <h2 className="font-semibold text-[56px] max-[1500px]:text-[40px] text-[#001422] leading-[72px]  [font-family:'sora'] max-[1100px]:text-[36px] max-[1100px]:leading-[48px]  max-[767px]:text-[26px] max-[767px]:leading-[36px]">
             What Our Customers
             <br />
             Have To Say
           </h2>
-          <p className="font-normal text-base text-[#9a9a9a] [font-family:'sora'] leading-[32px] ">
+          <p className="font-normal text-lg max-[1500px]:text-base max-[767px]:text-sm max-[767px]:leading-[24px] text-[#9a9a9a] [font-family:'sora'] leading-[32px] mx-[10px] ">
             Here's what our customers say with CareHealth
           </p>
         </div>
@@ -61,21 +61,21 @@ export default function CustomerTestimonialsSection () {
             >
               <div>
                 <div className="flex items-center mb-4">
-                  <Avatar className="rounded-full border-2 border-white shadow-md w-10 h-10 hover:w-12 hover:h-12 transition-all duration-300">
+                  <Avatar className="rounded-full border-2 border-white shadow-md w-12 h-12 max-[1500px]:w-10 max-[1500px]:h-10 hover:w-12 hover:h-12 transition-all duration-300">
                     <AvatarImage src={testimonial.avatarSrc} alt={testimonial.name} />
                     <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div className="ml-3">
-                    <p className="font-bold text-sm text-[#001422] group-hover:text-white">
+                    <p className="font-bold  text-base max-[1500px]:text-sm text-[#001422] group-hover:text-white">
                       {testimonial.name}
                     </p>
-                    <p className="text-xs group-hover:text-white">
+                    <p className="text-sm max-[1500px]:text-xs group-hover:text-white">
                       {testimonial.role}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-base leading-[40px] font-['sora'] max-[1100px]:leading-[27px]">
+                <p className="text-lg max-[1500px]:text-base max-[767px]:text-sm max-[767px]:leading-[24px] leading-[40px] font-['sora'] max-[1100px]:leading-[27px]">
                   {testimonial.text}
                 </p>
 

@@ -10,24 +10,24 @@ const aboutUsLinks = [
 ];
 
 const infoLinks = [
-  { text: "FAQ", href: "#" },
+  { text: "FAQ", href: "#faq" },
   { text: "Cookie & help", href: "#" },
   { text: "Privacy policy", href: "#" },
   { text: "Terms & conditions", href: "#" },
 ];
 
 const socialLinks = [
-  { icon: "./InstagramIcon.svg", href: "#", alt: "Instagram" },
-  { icon: "./LinkedinIcon.svg", href: "#", alt: "LinkedIn" },
-  { icon: "./FacebookIcon.svg", href: "#", alt: "Facebook" },
-  { icon: "./TwitterIcon.svg", href: "#", alt: "Twitter" },
+  { icon: "./InstagramIcon.svg", href: "https://www.instagram.com/", alt: "Instagram" },
+  { icon: "./LinkedinIcon.svg", href: "https://www.linkedin.com/", alt: "LinkedIn" },
+  { icon: "./FacebookIcon.svg", href: "https://www.facebook.com/", alt: "Facebook" },
+  { icon: "./TwitterIcon.svg", href: "https://twitter.com/", alt: "Twitter" },
 ];
 
 export default function SiteFooterSection () {
   return (
     <footer className="flex items-center justify-between gap-10 max-[1100px]:flex-col max-[1100px]:items-start max-[552px]:items-center pt-[80px] pb-[79px] max-[1000px]:pt-[40px] max-[1000px]:pb-[40px] w-full bg-[#0095fe] mt-10 px-[120px] max-[1300px]:px-[60px]  max-[1100px]:px-[50px] max-[767px]:px-[25px]">
           {/* Logo and Description */}
-          <div className="flex flex-col gap-1 w-full max-w-[534px]">
+          <div className="flex flex-col gap-1 max-[767px]:gap-5 w-full max-w-[534px]">
               <div className="w-[188px] h-[52px] max-[552px]:w-[150px] max-[552px]:h-[35px]">
                  <img
                   className="w-full h-full object-contain"
@@ -35,7 +35,7 @@ export default function SiteFooterSection () {
                   src="/logo-white.svg"
                 />
               </div>
-            <div className="[font-family:'sora'] font-normal text-white text-base leading-[40px] max-[1100px]:leading-[27px] max-[767px]:items-center">
+            <div className="[font-family:'sora'] font-normal text-white text-lg max-[1500px]:text-base max-[767px]:leading-[24px] max-[767px]:text-sm leading-[40px] max-[1100px]:leading-[27px] max-[767px]:items-center">
               Comes with a very great service, friendly and of course
               comfortable at a very affordable price by all groups, both bottom
               and top
@@ -43,24 +43,24 @@ export default function SiteFooterSection () {
           </div>
         
 
-             <div className="flex item-center justify-between w-full max-w-[581px] max-[1100px]:max-w-[100%] max-[552px]:flex-wrap max-[552px]:gap-10">      
+             <div className="flex item-center justify-between w-full max-w-[700px] max-[1500px]:max-w-[581px] max-[1100px]:max-w-[100%] max-[552px]:flex-wrap max-[552px]:gap-10">      
           {/* Office and Social Media */}
           <div className="flex flex-col gap-10 max-[1100px]:gap-5 max-[552px]:gap-[10px]">
             <div className="flex flex-col gap-[22px] ">
-              <h3 className="[font-family:'sora'] font-bold text-white leading-[100%] text-[18px]">
+              <h3 className="[font-family:'sora'] font-bold text-white leading-[100%] text-xl max-[1500px]:text-lg  max-[767px]:text-base">
                 Office
               </h3>
-              <p className="[font-family:'sora'] leading-[100%] font-normal text-white text-base">
+              <p className="[font-family:'sora'] leading-[100%] font-normal text-white text-lg max-[1500px]:text-base  max-[767px]:text-sm">
                 Jln.Galau terus no 23. <br />
                 Jakarta selatan
               </p>
             </div>
 
                   <div className="flex flex-col gap-5">
-                    <h3 className="[font-family:'sora'] font-bold text-white leading-[100%] text-[18px] mt-[20px] max-[767px]:mt-[10px] max-[1100px]:mt-[35px]">
+                    <h3 className="[font-family:'sora'] font-bold text-white leading-[100%] text-xl max-[1500px]:text-lg max-[767px]:text-base mt-[20px] max-[767px]:mt-[10px] max-[1100px]:mt-[35px]">
                       Follow us
                     </h3>
-                    <div className="flex justify-center min-[553px]:justify-start gap-4 min-[320px]:gap-5 min-[553px]:gap-6">
+                    <div className="flex justify-center min-[553px]:justify-start gap-4 min-[320px]:gap-4 min-[553px]:gap-6">
                           {socialLinks.map((link, index) => (
                             <a
                               key={index}
@@ -81,16 +81,16 @@ export default function SiteFooterSection () {
 
           {/* About Us */}
           <div className="flex flex-col gap-5 max-[552px]:gap-[10px]">
-            <h3 className="[font-family:Sora] font-bold text-white text-[18px] leading-[100%]">
+            <h3 className="[font-family:Sora] font-bold text-white text-xl max-[1500px]:text-lg leading-[100%] max-[767px]:text-base">
               About Us
             </h3>
             <nav>
-              <ul className="space-y-2 min-[320px]:space-y-3 min-[553px]:space-y-4 md:space-y-5">
+              <ul className="space-y-2 min-[320px]:space-y-2 min-[553px]:space-y-4 md:space-y-5">
                 {aboutUsLinks.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="[font-family:'sora'] font-normal text-white text-base leading-[100%] transition-colors duration-300 hover:text-white/80"
+                      className="[font-family:'sora'] font-normal text-white text-lg max-[1500px]:text-base max-[767px]:text-sm leading-[100%] transition-colors duration-300 hover:text-white/80"
                     >
                       {link.text}
                     </a>
@@ -102,16 +102,16 @@ export default function SiteFooterSection () {
 
           {/* Info */}
           <div className="flex flex-col gap-5 ">
-            <h3 className="[font-family:'sora'] font-bold text-white text-[18px] leading-[100%]">
+            <h3 className="[font-family:'sora'] font-bold text-white text-xl max-[1500px]:text-lg max-[767px]:text-base leading-[100%]">
               Info
             </h3>
             <nav>
-              <ul className="space-y-2 min-[320px]:space-y-3 min-[553px]:space-y-4 md:space-y-5">
+              <ul className="space-y-2 min-[320px]:space-y-2 min-[553px]:space-y-4 md:space-y-5">
                 {infoLinks.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="[font-family:'sora'] font-normal text-white text-base leading-[100%] transition-colors duration-300 hover:text-white/80"
+                      className="[font-family:'sora'] font-normal text-white text-lg max-[1500px]:text-base max-[767px]:text-sm leading-[100%] transition-colors duration-300 hover:text-white/80"
                     >
                       {link.text}
                     </a>

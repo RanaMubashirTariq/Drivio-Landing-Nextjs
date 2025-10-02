@@ -34,7 +34,7 @@ export default function NavbarSection (){
 
           {/* Desktop Navigation - shows above 1000px */}
           <div className="hidden min-[1000px]:block">
-            <ul className="flex  w-full  gap-[31px] text-base  font-normal font-['sora'] text-[#001422]">
+            <ul className="flex  w-full gap-[50px] max-[1500px]:gap-[31px] text-lg max-[1500px]:text-base  font-normal font-['sora'] text-[#001422]">
               <li>
                 <Link href="#" className="hover:text-[#0095fe]">Home</Link>
               </li>
@@ -79,7 +79,7 @@ export default function NavbarSection (){
           </div>
 
           {/* Desktop Sign In Button - shows above 1000px */}
-          <Button className="hidden min-[1000px]:block bg-[#0095fe] text-white font-bold rounded-xl h-[52px] w-[134px] font-['sora'] ">
+          <Button className="hidden min-[1000px]:block bg-[#0095fe] text-white font-bold rounded-xl h-[52px] w-[134px] font-['sora'] leading-[100%] font-bold text-lg max-[1500px]:text-base ">
             Sign In
           </Button>
                              </header>

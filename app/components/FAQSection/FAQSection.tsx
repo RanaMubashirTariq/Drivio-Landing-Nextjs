@@ -51,14 +51,14 @@ export default function FAQSection () {
   );
 
   return (
-    <section className="w-full py-10 px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[50px] max-[767px]:px-[25px] bg-[#f3f3f3]">
+    <section className="w-full max-w-[1500px] mx-auto py-10 px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[50px] max-[767px]:px-[25px] bg-[#f3f3f3]">
       <div className="flex flex-col items-center gap-4 mb-6">
-        <h2 className="font-['sora'] font-semibold text-[#001422] text-[40px] text-center leading-[72px] max-[1000px]:text-[36px] max-[1000px]:leading-[48px] max-[767px]:text-[28px] max-[767px]:leading-[38px]">
+        <h2 className="font-['sora'] font-semibold text-[#001422] text-[56px] max-[1500px]:text-[40px] text-center leading-[72px] max-[1000px]:text-[36px] max-[1000px]:leading-[48px] max-[767px]:text-[26px] max-[767px]:leading-[36px]">
           Frequently Asked Questions
           <br />
           (faq)
         </h2>
-        <p className="w-[444px] font-['sora'] font-normal text-[#9a9a9a] text-base text-center leading-[180%] max-[767px]:w-full">
+        <p className="w-[500px] max-[1500px]:w-[444px] font-['sora'] font-normal text-[#9a9a9a] text-lg max-[1500px]:text-base max-[767px]:text-sm max-[767px]:leading-[24px] text-center leading-[180%] max-[767px]:w-full">
           Our Browser Faq Below, If You Can't Find The Answer In Gready
         </p>
       </div>
@@ -79,7 +79,7 @@ export default function FAQSection () {
           >
             <AccordionTrigger
               className="flex justify-between items-center w-full max-[767px]:px-4 max-[767px]:py-4 md:px-6 md:py-6 lg:px-10 lg:py-8
-                font-['sora']  font-semibold text-[20px] max-[450px]:text-[18px] text-start transition-all duration-300 [&>svg]:hidden group hover:no-underline"
+                font-['sora']  font-semibold text-[24px] max-[1500px]:text-[20px] max-[767px]:text-[18px] text-start transition-all duration-300 [&>svg]:hidden group hover:no-underline"
             >
               <span>{item.question}</span>
               <span>
@@ -88,7 +88,7 @@ export default function FAQSection () {
             </AccordionTrigger>
             <AccordionContent
               className="px-4 min-[416px]:px-6 pb-3 min-[416px]:pb-4 md:px-10 md:pb-8
-                font-['sora'] font-normal text-[16px] max-[450px]:text-[15px] max-[1100px]:leading-[27px] leading-10 transition-all duration-300"
+                font-['sora'] font-normal text-lg max-[1500px]:text-base max-[767px]:text-[15px] max-[767px]:leading-[24px] max-[1100px]:leading-[27px] leading-10 transition-all duration-300"
             >
               {item.answer}
             </AccordionContent>

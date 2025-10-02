@@ -101,7 +101,7 @@ const CustomDropdown = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative w-full max-w-[173px] max-[1000px]:max-w-full z-20">
+    <div className="relative w-full max-w-[250px] max-[1500px]:max-w-[173px] max-[1000px]:max-w-full z-20">
       <label className="text-base font-bold font-['sora'] text-[#001422] mb-2 block">
         {label}
       </label>
@@ -148,7 +148,7 @@ const CustomDropdown = ({
 
 
     return (
-        <section className="relative w-full flex flex-col items-center bg-[#f3f3f3] overflow-hidden  ">
+        <section className="relative w-full flex flex-col items-center  bg-[#f3f3f3] overflow-hidden  ">
 
                      {/* NavbarSection  */}
                  
@@ -167,16 +167,13 @@ const CustomDropdown = ({
             className="min-[1000px]:hidden p-2 shrink-0 ml-4 w-[36px] min-[320px]:w-[40px] min-[428px]:w-[48px] h-[36px] min-[320px]:h-[40px] min-[428px]:h-[48px] flex items-center justify-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
-          >
-            {isMenuOpen ? 
-              <X className="w-5 h-5 min-[320px]:w-6 min-[320px]:h-6 min-[428px]:w-7 min-[428px]:h-7" /> : 
+          >  
               <Menu className="w-5 h-5 min-[320px]:w-6 min-[320px]:h-6 min-[428px]:w-7 min-[428px]:h-7" />
-            }
           </button>
 
           {/* Desktop Navigation - shows above 1000px */}
           <div className="hidden min-[1000px]:block">
-           <ul className="flex gap-[31px] text-base font-normal font-['sora']">
+           <ul className="flex gap-[50px] max-[1500px]:gap-[31px] text-[18px] max-[1500px]:text-base font-normal font-['sora']">
             <li>
              <Link
                       href="#"
@@ -223,7 +220,11 @@ const CustomDropdown = ({
           </div>
 
           {/* Mobile Navigation Menu - shows below 1000px */}
-          <div className={`min-[1000px]:hidden w-[250px] ${isMenuOpen ? 'block' : 'hidden'} absolute top-[70px] right-0 h-[80vh] rounded-[20px] bg-white shadow-lg py-4 px-6 z-50`}>
+          <div
+  className={`min-[1000px]:hidden fixed top-[60px] right-0 h-[100vh] w-[250px] pl-[30px] py-[30px] bg-white shadow-lg z-50
+    transform transition-transform duration-300 ease-in-out
+    ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+>
             <div className="w-full">
               <ul className="flex flex-col items-start space-y-4 text-base font-normal text-[#001422]">
             <li>
@@ -271,7 +272,7 @@ const CustomDropdown = ({
           </div>
 
           {/* Desktop Sign In Button - shows above 1000px */}
-          <Button className="hidden min-[1000px]:block bg-[#0095fe] text-white font-bold rounded-xl h-[52px] w-[134px] font-['sora'] ">
+          <Button className="hidden min-[1000px]:block bg-[#0095fe] text-white font-bold rounded-xl h-[52px] w-[134px] font-['sora'] font-bold text-lg max-[1500px]:text-[16px] leading-[100%] tracking-[0px] ">
             Sign In
           </Button>
                              </header>
@@ -280,9 +281,9 @@ const CustomDropdown = ({
                       {/* HeroSection */}
                         
 
-               <div className="absolute w-[400px] h-[444px] top-[200px] left-[910px] max-[1300px]:left-[800px] max-[1100px]:h-[300px]  max-[1100px]:top-[200px] max-[1100px]:left-[700px] bg-[#0095fe] rounded-[222px] blur-[167px] hidden lg:block" />
+               <div className="absolute w-[400px] h-[444px] top-[200px] right-[186px] max-[1500px]:left-[910px]  max-[1300px]:left-[800px] max-[1100px]:h-[300px]  max-[1100px]:top-[200px] max-[1100px]:left-[700px] bg-[#0095fe] rounded-[222px] blur-[167px] hidden lg:block" />
 
-              <img  className="absolute w-[887px] h-[607px] top-[124px] left-[726px] max-[1300px]:left-[600px] max-[1300px]:w-[800px] max-[1100px]:w-[600px] max-[1100px]:h-[480px] max-[1100px]:left-[500px] max-[1022px]:hidden"  alt="Blue isolated car"  src="/blue-isolated-car-1.png"  />
+              <img  className="absolute w-[887px] h-[607px] top-[124px] right-[0px] max-[1700px]:right-[-120px] max-[1500px]:left-[726px] max-[1300px]:left-[600px] max-[1300px]:w-[800px] max-[1100px]:w-[600px] max-[1100px]:h-[480px] max-[1100px]:left-[500px] max-[1022px]:hidden"  alt="Blue isolated car"  src="/blue-isolated-car-1.png"  />
   
           
           {/* For Mobile Section */}
@@ -292,14 +293,14 @@ const CustomDropdown = ({
 
 
         {/* Right Part HeroSection */}
-        <div id="home" className=" z-10 lg:absolute top-[216px] left-[120px] max-[1300px]:left-[60px] max-[1100px]:left-[40px] max-[767px]:left-[0px] max-[1000px]:px-[50px] max-[680px]:px-[25px]  w-full max-w-[566px] max-[1300px]:max-w-[480px] max-[1100px]:max-w-[380px] max-[1022px]:max-w-full max-[1022px]:items-center  flex flex-col gap-[89.5px]  max-[1300px]:gap-[50px] max-[767px]:gap-[30px] ">
+        <div id="home" className=" z-10 lg:absolute top-[216px] left-[120px] max-[1300px]:left-[60px] max-[1100px]:left-[40px] max-[767px]:left-[0px] max-[1000px]:px-[50px] max-[680px]:px-[25px]  w-full max-w-[700px] max-[1500px]:max-w-[566px] max-[1300px]:max-w-[480px] max-[1100px]:max-w-[380px] max-[1022px]:max-w-full max-[1022px]:items-center  flex flex-col gap-[89.5px]  max-[1300px]:gap-[50px] max-[767px]:gap-[30px] ">
 
 
               <div className="flex flex-col gap-8 max-[1022px]:items-center max-[767px]:gap-4">
-                    <h1 className="font-['sora']  font-bold text-[#001422] text-[56px]  max-[1300px]:text-[48px] max-[1100px]:text-[38px] leading-[100%] mt-0 max-[1022px]:text-center">
+                    <h1 className="font-['sora']  font-bold text-[#001422] text-[76px] max-[1500px]:text-[56px]  max-[1300px]:text-[48px] max-[1100px]:text-[38px] max-[767px]:text-[32px] leading-[100%] mt-0 max-[1022px]:text-center">
                   Be The First With The Convenience Of Drivio
                 </h1>
-                <p className="font-['sora'] font-normal text-[#636262] text-[16px] leading-[40px] max-[1100px]:leading-[27px] tracking[0%] mt-0 max-[1022px]:text-center">
+                <p className="font-['sora'] font-normal text-[#636262] text-lg max-[1500px]:text-[16px] max-[767px]:text-[14px] max-[767px]:leading-[24px] leading-[40px] max-[1100px]:leading-[27px] tracking[0%] mt-0 max-[1022px]:text-center">
                   Comes with a very great service, friendly and of course comfortable
                   at a very affordable price by all groups, both bottom and top
                 </p>
@@ -346,27 +347,27 @@ const CustomDropdown = ({
                                     {/* Features Section */}
                                
 
-             <section id="about" className="mt-[750px] max-[1100px]:mt-[650px] max-[1000px]:mt-0    py-10  px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[40px]  max-[767px]:px-[25px] overflow-hidden  max-[1000px]:pt-[40px]">
+             <section id="about" className=" w-full mt-[820px] max-[1500px]:mt-[750px] max-[1100px]:mt-[650px] max-[1000px]:mt-0    py-10  px-[120px] max-[1300px]:px-[60px] max-[1100px]:px-[40px]  max-[767px]:px-[25px] overflow-hidden  max-[1000px]:pt-[40px]">
         <div className="flex flex-col min-[1100px]:flex-row gap-10 items-center justify-center min-[1100px]:justify-between text-center lg:text-left ">
      
-          <div className="w-full min-[1100px]:w-[539px] flex flex-col gap-[40px] max-[1000px]:gap-[20px] max-[1100px]:items-center">
+          <div className="w-full min-[1500px]:w-[700px] min-[1100px]:w-[539px] flex flex-col gap-[40px] max-[1000px]:gap-[20px] max-[1100px]:items-center">
             <div className="flex flex-col gap-[16px] max-[1100px]:items-center">
-              <h2 className="font-['sora'] font-semibold text-[#001422] text-[48px] leading-[72px] max-[1000px]:text-[36px] max-[1000px]:leading-[48px] max-[680px]:text-[28px] max-[680px]:leading-[36px] leading-[72px] tracking-[0%] max-[1100px]:text-center">
+              <h2 className="font-['sora'] font-semibold text-[#001422] text-[56px] max-[1500px]:text-[48px] leading-[72px] max-[1000px]:text-[36px] max-[1000px]:leading-[48px] max-[767px]:text-[26px] max-[767px]:leading-[36px] leading-[72px] tracking-[0%] max-[1100px]:text-center">
                 We Will Make You Very Special With Our Service
               </h2>
-              <p className="font-['sora'] font-normal text-[#9a9a9a] text-[16px]  leading-[40px] max-[1100px]:leading-[27px] tracking-[0%] max-[1100px]:text-center">
+              <p className="font-['sora'] font-normal text-[#9a9a9a] text-lg max-[1500px]:text-[16px]  max-[767px]:text-sm max-[767px]:leading-[24px] leading-[40px] max-[1100px]:leading-[27px] tracking-[0%] max-[1100px]:text-center">
                 There are many benefits that you will get at Drivio, and for
                 sure you will be comfortable and safe with us with great
                 facilities and benefits
               </p>
             </div>
-              <Button className="bg-[#0095fe] w-[158px] h-[52px] text-base text-white font-bold rounded-xl">
+              <Button className="bg-[#0095fe] hover:bg-[#0095fe]/90  w-[158px] max-[767px]:w-[130px] max-[767px]:h-10 h-[52px]  text-white font-bold rounded-xl font-bold text-lg max-[1500px]:text-base max-[767px]:text-[14px]">
                 Book now
               </Button>
           </div>   
 
           
-          <div className="relative w-full min-[1100px]:w-[585px]  grid  max-[766px]:grid-cols-1 min-[767px]:grid-cols-2 gap-[10px] min-[767px]:gap-6">
+          <div className="relative w-full min-[1500px]:w-[730px] min-[1100px]:w-[585px]  grid  max-[766px]:grid-cols-1 min-[767px]:grid-cols-2 gap-[10px] min-[767px]:gap-6">
             {featureCards.map((card) => (
               <Card
                 key={card.id}
@@ -415,7 +416,7 @@ const CustomDropdown = ({
                   <h3 className="font-['sora'] font-semibold text-[#001422] text-[24px] max-[500px]:text-[20px] leading-[100%] lg:text-2xl mb-2 min-[767px]:mb-3 text-center lg:text-left">
                     {card.title}
                   </h3>
-                  <p className="font-['sora'] font-normal text-[#9a9a9a] text-[14px] min-[767px]:text-sm leading-[24px] min-[767px]:leading-6 text-center lg:text-left">
+                  <p className="font-['sora'] font-normal text-[#9a9a9a] min-[1500px]:text-[16px] max-[1490px]:text-[14px] min-[320px]:text-sm  leading-[24px] min-[320px]:leading-6 text-center lg:text-left">
                     {card.description}
                   </p>
                 </div>
