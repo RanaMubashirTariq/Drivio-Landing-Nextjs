@@ -56,7 +56,7 @@ export default function FAQSection () {
         <h2 className="font-['sora'] font-semibold text-[#001422] text-[56px] max-[1500px]:text-[40px] text-center leading-[72px] max-[1000px]:text-[36px] max-[1000px]:leading-[48px] max-[767px]:text-[26px] max-[767px]:leading-[36px]">
           Frequently Asked Questions
           <br />
-          (faq)
+          (FAQ)
         </h2>
         <p className="w-[500px] max-[1500px]:w-[444px] font-['sora'] font-normal text-[#9a9a9a] text-lg max-[1500px]:text-base max-[767px]:text-sm max-[767px]:leading-[24px] text-center leading-[180%] max-[767px]:w-full">
           Our Browser Faq Below, If You Can't Find The Answer In Gready
