@@ -3,7 +3,7 @@ import { Button } from '../../../app/ui/button'
 
 // Define user profile images data for mapping
 const profileImages = [
-  { src: "/unsplash-nimeltctnyy.png", alt: "User profile", top: "2%", left: "42%" },
+  { src: "/unsplash-nimeltctnyy.png", alt: "User profile", top: "9%", left: "42%" },
   { src: "/unsplash-ohkelokq3re.png", alt: "User profile", top: "21%", left: "17%" },
   { src: "/unsplash-ifgrcqhznqg.png", alt: "User profile", top: "21%", left: "67%" },
   { src: "/unsplash-mez3pofgs-k-1.png", alt: "User profile", top: "41%", left: "0%" },
@@ -59,7 +59,7 @@ export default function ServiceFeaturesSection () {
             </p>
           </div>
 
-          <Button className="w-[159px] h-[52px] max-[767px]:w-[130px] max-[767px]:h-10 bg-[#0095fe] hover:bg-[#0095fe]/90 rounded-xl font-['sora'] font-bold text-white text-lg max-[1500px]:text-base max-[767px]:text-[14px] leading-[100%]">
+          <Button className="w-[159px] h-[52px] max-[767px]:w-[130px] max-[767px]:h-10 bg-[#0095fe] hover:bg-[#0095fe]/90 cursor-pointer  rounded-xl font-['sora'] font-bold text-white text-lg max-[1500px]:text-base max-[767px]:text-[14px] leading-[100%]">
             Explore now
           </Button>
         </div>

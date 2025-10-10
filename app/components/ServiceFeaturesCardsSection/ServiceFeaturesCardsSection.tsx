@@ -56,7 +56,7 @@ export default function ServiceFeaturesCardsSection  () {
                 facilities and benefits
               </p>
             </div>
-              <Button className="bg-[#0095fe] w-[158px] h-[52px] text-base text-white font-bold rounded-xl">
+              <Button className="bg-[#0095fe] w-[158px] h-[52px] text-base text-white font-bold rounded-xl cursor-pointer hover:bg-[#0095fe]/90">
                 Book now
               </Button>
           </div>   
@@ -66,7 +66,7 @@ export default function ServiceFeaturesCardsSection  () {
             {featureCards.map((card) => (
               <Card
                 key={card.id}
-                className="bg-white rounded-[30px] overflow-hidden w-full h-auto min-w-[288px]"
+                className="bg-white rounded-[30px] overflow-hidden w-full h-auto min-w-[288px] cursor-pointer"
               >
                 <CardContent className="p-4 min-[767px]:p-6 ">
                   <div className="relative w-[80px] min-[320px]:w-[85px] min-[370px]:w-[90px] min-[767px]:w-[100px] h-[80px]  min-[370px]:h-[90px] min-[767px]:h-[100px] mb-4 min-[767px]:mb-10 mx-auto lg:mx-0">

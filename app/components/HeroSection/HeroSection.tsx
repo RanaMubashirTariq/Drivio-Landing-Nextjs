@@ -272,7 +272,7 @@ const CustomDropdown = ({
           </div>
 
           {/* Desktop Sign In Button - shows above 1000px */}
-          <Button className="hidden min-[1000px]:block bg-[#0095fe] text-white font-bold rounded-xl h-[52px] w-[134px] font-['sora'] font-bold text-lg max-[1500px]:text-[16px] leading-[100%] tracking-[0px] ">
+          <Button className="hidden min-[1000px]:block bg-[#0095fe] text-white font-bold rounded-xl h-[52px] w-[134px] font-['sora'] font-bold text-lg max-[1500px]:text-[16px] leading-[100%] tracking-[0px] cursor-pointer hover:bg-[#0095fe]/90">
             Sign In
           </Button>
                              </header>
@@ -283,7 +283,7 @@ const CustomDropdown = ({
 
                <div className="absolute w-[400px] h-[444px] top-[200px] right-[186px] max-[1500px]:left-[910px]  max-[1300px]:left-[800px] max-[1100px]:h-[300px]  max-[1100px]:top-[200px] max-[1100px]:left-[700px] bg-[#0095fe] rounded-[222px] blur-[167px] hidden lg:block" />
 
-              <img  className="absolute w-[887px] h-[607px] top-[124px] right-[0px] max-[1700px]:right-[-120px] max-[1500px]:left-[726px] max-[1300px]:left-[600px] max-[1300px]:w-[800px] max-[1100px]:w-[600px] max-[1100px]:h-[480px] max-[1100px]:left-[500px] max-[1022px]:hidden"  alt="Blue isolated car"  src="/blue-isolated-car-1.png"  />
+              <img  className="absolute w-[887px] h-[607px] top-[124px] right-[0px] max-[1700px]:right-[-120px] max-[1560px]:right-[-180px] max-[1500px]:left-[726px] max-[1300px]:left-[600px] max-[1300px]:w-[800px] max-[1100px]:w-[600px] max-[1100px]:h-[480px] max-[1100px]:left-[500px] max-[1022px]:hidden"  alt="Blue isolated car"  src="/blue-isolated-car-1.png"  />
   
           
           {/* For Mobile Section */}
@@ -325,7 +325,7 @@ const CustomDropdown = ({
         />
       </div>
 
-      <button className="bg-[#0095FE] w-[120px] max-[1100px]:w-[80px] max-[1000px]:w-[100px] max-[500px]:w-full max-[500px]:h-[50px] px-6 py-[18px] rounded-r-[20px] max-[500px]:rounded-r-[0px] max-[500px]:rounded-b-[20px] flex items-center justify-center hover:opacity-[80%] transition-colors">
+      <button className="bg-[#0095FE] w-[120px] max-[1100px]:w-[80px] max-[1000px]:w-[100px] max-[500px]:w-full max-[500px]:h-[50px] px-6 py-[18px] rounded-r-[20px] max-[500px]:rounded-r-[0px] max-[500px]:rounded-b-[20px] flex items-center justify-center  cursor-pointer hover:bg-[#0095fe]/90" >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-8 w-8 text-white"
@@ -361,7 +361,7 @@ const CustomDropdown = ({
                 facilities and benefits
               </p>
             </div>
-              <Button className="bg-[#0095fe] hover:bg-[#0095fe]/90  w-[158px] max-[767px]:w-[130px] max-[767px]:h-10 h-[52px]  text-white font-bold rounded-xl font-bold text-lg max-[1500px]:text-base max-[767px]:text-[14px]">
+              <Button className="bg-[#0095fe] hover:bg-[#0095fe]/90 cursor-pointer  w-[158px] max-[767px]:w-[130px] max-[767px]:h-10 h-[52px]  text-white font-bold rounded-xl font-bold text-lg max-[1500px]:text-base max-[767px]:text-[14px]">
                 Book now
               </Button>
           </div>   
@@ -371,7 +371,7 @@ const CustomDropdown = ({
             {featureCards.map((card) => (
               <Card
                 key={card.id}
-                className="bg-white rounded-[30px] overflow-hidden w-full h-auto min-w-[370px]:min-w-[288px] "
+                className="bg-white rounded-[30px] overflow-hidden w-full h-auto min-w-[370px]:min-w-[288px] cursor-pointer"
               >
                 <div className="p-4 min-[767px]:p-6 ">
                   <div className="relative w-[80px] min-[320px]:w-[85px] min-[370px]:w-[90px] min-[767px]:w-[100px] h-[80px]  min-[370px]:h-[90px] min-[767px]:h-[100px] mb-4 min-[767px]:mb-10 mx-auto lg:mx-0">

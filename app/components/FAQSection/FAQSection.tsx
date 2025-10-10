@@ -78,7 +78,7 @@ export default function FAQSection () {
               data-[state=open]:bg-[#0095fe] data-[state=open]:text-white"
           >
             <AccordionTrigger
-              className="flex justify-between items-center w-full max-[767px]:px-4 max-[767px]:py-4 md:px-6 md:py-6 lg:px-10 lg:py-8
+              className="cursor-pointer  flex justify-between items-center w-full max-[767px]:px-4 max-[767px]:py-4 md:px-6 md:py-6 lg:px-10 lg:py-8
                 font-['sora']  font-semibold text-[24px] max-[1500px]:text-[20px] max-[767px]:text-[18px] text-start transition-all duration-300 [&>svg]:hidden group hover:no-underline"
             >
               <span>{item.question}</span>
